@@ -22,6 +22,8 @@ public class APITesting012_DELETErequest_NonBDD {
         r = RestAssured.given().baseUri("https://restful-booker.herokuapp.com").basePath("/booking/"+bookingid);
         r.contentType(ContentType.JSON);
         r.cookie("token",token);
+        //can also use basic auth instead of cookie using auth and basic methods
+      //  r.auth().basic("admin","password123");
 
         response = r.when().log().all().delete();
 
